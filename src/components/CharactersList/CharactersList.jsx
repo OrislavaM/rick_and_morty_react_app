@@ -42,17 +42,8 @@ const CharacterList = () => {
                         setGender={setGender}
                         onChange={(value) => setGender(value)}
                     />
-                    {characters.map(({ name, image, species, id, gender }) => {
-                        return (
-                            <CharacterCard
-                                key={id}
-                                id={id}
-                                name={name}
-                                image={image}
-                                specie={species}
-                                gender={gender}
-                            />
-                        );
+                    {characters.map((character) => {
+                        return <CharacterCard {...character} />;
                     })}
                 </>
             )}{" "}
